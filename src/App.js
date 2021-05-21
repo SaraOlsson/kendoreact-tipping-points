@@ -4,15 +4,25 @@ import './App.css';
 
 import { Calendar } from '@progress/kendo-react-dateinputs'
 import KendoPie from "./components/KendoPie"
+import KendoAppBar from "./components/KendoAppBar"
 
 function App() {
   return (
+    <>
+    <KendoAppBar/>
     <div className="App">
       <h1>Hello KendoReact!</h1>
       <Calendar/>
       <KendoPie/>
     </div>
+    </>
   );
 }
+
+{/* <div className="App">
+  <h1>Hello KendoReact!</h1>
+  <Calendar/>
+  <KendoPie/>
+</div> */}
 
 export default App;
