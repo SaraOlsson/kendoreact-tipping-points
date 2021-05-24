@@ -2,20 +2,20 @@ import * as React from 'react';
 import { Chart, ChartLegend, ChartSeries, ChartSeriesItem, ChartTitle } from '@progress/kendo-react-charts';
 // import 'hammerjs';
 const series = [{
-  category: '0-14',
-  value: 0.2545
+  category: 'Ice melting',
+  value: 0.65
 }, {
-  category: '15-24',
-  value: 0.1552
+  category: 'Wildfire',
+  value: 0.12
 }, {
-  category: '25-54',
-  value: 0.4059
+  category: 'Ocean',
+  value: 0.21
 }, {
-  category: '55-64',
-  value: 0.0911
+  category: 'Forest',
+  value: 0.12
 }, {
-  category: '65+',
-  value: 0.0933
+  category: 'Biodiversity',
+  value: 0.0
 }];
 
 const labelContent = props => {
@@ -23,11 +23,11 @@ const labelContent = props => {
     style: 'percent',
     minimumFractionDigits: 2
   });
-  return `${props.dataItem.category} years old: ${formatedNumber}`;
+  return `${props.dataItem.category}: ${formatedNumber}`;
 };
 
 const ChartContainer = () => <Chart>
-    <ChartTitle text='World Population by Broad Age Groups' />
+    <ChartTitle text='Tipping points category representation' />
     <ChartLegend position="bottom" />
     <ChartSeries>
       <ChartSeriesItem type="pie" data={series} field="value" categoryField="category" labels={{
@@ -36,5 +36,16 @@ const ChartContainer = () => <Chart>
     }} />
     </ChartSeries>
   </Chart>;
+
+// const ChartContainer = () => <Chart>
+//     <ChartTitle text='World Population by Broad Age Groups' />
+//     <ChartLegend position="bottom" />
+//     <ChartSeries>
+//       <ChartSeriesItem type="pie" data={series} field="value" categoryField="category" labels={{
+//       visible: true,
+//       content: labelContent
+//     }} />
+//     </ChartSeries>
+//   </Chart>;
 
 export default ChartContainer
